@@ -3,7 +3,9 @@
 ![1700658231950](https://github.com/Lewis-Gitari/Tanzania-water-wells/assets/146082404/46e5c67f-7ffc-43c9-9a50-9e65f1d470d9)
 
 # OVERVIEW
-For this project i'll be working as a Data scientist along an NGO alligned towards provision of water among communities in Tanzania. I'm to analyse existing data within the Tanzanian water ministry and create a model that will guide us on the estimated life span of wells in different regions and varying  conditions.
+The Tanzanian government, foreign donor organizations, churches and faith-based organizations, and even the villagers have all been involved in funding and installation of wells. Some of the installed wells however cease to function over time while others remain in dilapidated conditions needing repair.
+
+For this project i'll be working as a Data scientist along an NGO alligned towards provision of water among communities in Tanzania. I'm to analyse existing data within the Tanzanian water ministry and create a model that will guide us on the functionality estimated life span of wells in different regions and varying  conditions.
 
 # TOOLS
   Python
@@ -79,6 +81,23 @@ I then split the data before we carry out any further transformations to prevent
 Final Model
 Of all the models tested, the tuned random forest model has given the best results at a training accuracy of 0.89 and a test accuracy of 0.79. We'll tune it a little further in this section and then present it as our final predictive model.
 
-Our target variable in the beginning was affected by class imbalances. We'll tune the final model in this section using SMOTE to handle the class imbalances and then see how it performs.
-Adding the smote tuning distabilized our model so we stick to our tuned RandomForest model as our model.
-We can now key in data and get actual insights.
+## The most important features in predicting well function as depicted by our final model are
+
++  Altitude of the well (gps_height)
++  Well age (age_of_well)
++  Population (population)
++  Enough water quantity (quantity_enough)
++  Amount of water in total static head (amount_tsh)
++  Insufficient water quantity (quantity_insufficient)
++  The waterpoint kind (waterpoint_type_group_other)
++  The kind of extraction used by the waterpoint(extraction_type_group_other)
++  Well having a permit(permit_True)
++  Well where payment is not made (payment_type_never pay)
+
+## Mtwara and Lindi Regions stand out for having a higher proportion of non-functional wells compared to the functional wells. Ruvuma/Southern Coast and L. Rukwa basin also have a higher proportion of non functional wells compared to the functional ones. These areas can be prioritized in repair of non functional and functional wells that need repair.
+
+## Well projects where people do not pay for well use or the payment details are unknown, and where public meetings are not held, have a higher proportion of non functional wells compared to the functional wells.
+
+## Dry wells are more likely to be non functional than the rest of the wells.
+
+## Wells with salty water and walls with dam and lake as a source are more likely to be non-functional.
